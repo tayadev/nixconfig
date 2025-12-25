@@ -16,14 +16,15 @@ in
   };
 
   config = mkIf cfg.enable {
-    programs.vscode.profiles.default = {
+    programs.vscode = {
       enable = true;
       package = pkgs.vscode;
 
       # Use mutableExtensionsDir to allow installing themes from marketplace
       mutableExtensionsDir = true;
 
-      extensions =
+      profiles.default = {
+        extensions =
         with pkgs.vscode-extensions;
         [
           # Vim extension
@@ -37,9 +38,8 @@ in
           ms-python.python
           rust-lang.rust-analyzer
         ]
-        ++ [
+        ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
           # Horizon theme (not in nixpkgs, install from marketplace)
-          pkgs.vscode-utils.extensionsFromVscodeMarketplace
           {
             name = "horizon-theme-vscode";
             publisher = "alexandernanberg";
@@ -48,7 +48,7 @@ in
           }
         ];
 
-      userSettings = {
+        userSettings = {
         # Theme settings
         "workbench.colorTheme" = "Horizon";
 
@@ -100,9 +100,9 @@ in
 
         # Extension: vscodevim.vim settings
         "extensions.autoUpdate" = false; # Prevent auto-updating declarative extensions
-      };
+        };
 
-      keybindings = [
+        keybindings = [
         {
           key = "ctrl+h";
           command = "workbench.action.navigateLeft";
@@ -119,7 +119,8 @@ in
           key = "ctrl+j";
           command = "workbench.action.navigateDown";
         }
-      ];
+        ];
+      };
     };
   };
 }
