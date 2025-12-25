@@ -6,6 +6,7 @@
     ./desktop
     ./development
     ./gaming
+    ./hardware
     ./media
   ];
 }

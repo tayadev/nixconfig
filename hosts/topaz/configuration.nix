@@ -20,6 +20,9 @@
     # Gaming support
     gaming.enable = true;
 
+    # Hardware support
+    hardware.fido2.enable = true;
+
     # Media and creative tools
     media.enable = true;
   };
@@ -31,7 +34,7 @@
   users.users.taya = {
     isNormalUser = true;
     description = "Taya";
-    extraGroups = [ "wheel" "networkmanager" "video" "audio" ];
+    extraGroups = [ "wheel" "networkmanager" "video" "audio" "plugdev" ];
     hashedPassword = "$6$5t11bOwky4G5kR1e$an8G.JYT5fO5/HOdFribIPmqCFmQrkw2SNF5IWttIXr67eCF2iC22S6gubFE5TpTG9WQUwo/vjtAS1q9ipujQ1";
   };
 

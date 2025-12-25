@@ -45,8 +45,6 @@ in
     # Essential KDE packages
     environment.systemPackages = with pkgs; [
       # KDE Applications
-      kdePackages.kate
-      kdePackages.kcalc
       kdePackages.kcolorchooser
       kdePackages.kdialog
       kdePackages.dolphin
@@ -70,5 +68,12 @@ in
     # Enable flatpak (optional, for additional KDE apps)
     services.flatpak.enable = true;
     xdg.portal.enable = true;
+
+    # Enable Bluetooth support
+    hardware.bluetooth = {
+      enable = true;
+      powerOnBoot = true;
+    };
+    services.blueman.enable = true;
   };
 }
