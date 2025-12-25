@@ -15,13 +15,9 @@
 
     # Communication
     discord
-    telegram-desktop
 
     # Utilities
-    keepassxc
-    vlc
     mpv
-    spotify
 
     # Archives
     p7zip

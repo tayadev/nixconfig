@@ -24,7 +24,7 @@ in
     services.desktopManager.plasma6.enable = true;
 
     # Enable sound with pipewire
-    hardware.pulseaudio.enable = false;
+    services.pulseaudio.enable = false;
     security.rtkit.enable = true;
     services.pipewire = {
       enable = true;
@@ -50,12 +50,17 @@ in
       kdePackages.kcolorchooser
       kdePackages.kdialog
       kdePackages.dolphin
-      kdePackages.konsole
       kdePackages.spectacle  # Screenshot utility
       kdePackages.okular     # Document viewer
       kdePackages.gwenview   # Image viewer
       kdePackages.ark        # Archive manager
       kdePackages.filelight  # Disk usage analyzer
+
+      # Terminal
+      ghostty
+
+      # Password manager
+      bitwarden-desktop
 
       # Themes and customization
       libsForQt5.qtstyleplugin-kvantum

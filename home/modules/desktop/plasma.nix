@@ -26,11 +26,14 @@ in
         wallpaper = "${pkgs.kdePackages.plasma-workspace-wallpapers}/share/wallpapers/Kay/contents/images/1920x1080.png";
       };
 
-      # Hotkeys (examples)
-      hotkeys.commands."launch-konsole" = {
-        name = "Launch Konsole";
+      # Set default terminal emulator
+      configFile."kdeglobals"."General"."TerminalApplication" = "ghostty";
+
+      # Hotkeys
+      hotkeys.commands."launch-terminal" = {
+        name = "Launch Terminal";
         key = "Meta+Return";
-        command = "konsole";
+        command = "ghostty";
       };
 
       # Configure panels (optional - uncomment to customize)

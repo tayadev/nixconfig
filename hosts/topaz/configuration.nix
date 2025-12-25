@@ -24,13 +24,31 @@
     media.enable = true;
   };
 
+  # Enable passwordless sudo for wheel group
+  security.sudo.wheelNeedsPassword = false;
+
   # User accounts
   users.users.taya = {
     isNormalUser = true;
     description = "Taya";
     extraGroups = [ "wheel" "networkmanager" "video" "audio" ];
-    initialPassword = "password";  # Change this after first login!
+    hashedPassword = "$6$5t11bOwky4G5kR1e$an8G.JYT5fO5/HOdFribIPmqCFmQrkw2SNF5IWttIXr67eCF2iC22S6gubFE5TpTG9WQUwo/vjtAS1q9ipujQ1";
   };
+
+  # Hardware configuration
+  # Enable NVIDIA drivers
+  services.xserver.videoDrivers = [ "nvidia" ];
+  hardware.nvidia = {
+    modesetting.enable = true;
+    powerManagement.enable = false;
+    powerManagement.finegrained = false;
+    open = false;  # Use proprietary driver
+    nvidiaSettings = true;
+    package = config.boot.kernelPackages.nvidiaPackages.stable;
+  };
+
+  # Intel microcode updates (already configured in hardware-configuration.nix)
+  hardware.cpu.intel.updateMicrocode = true;
 
   # System-wide packages
   environment.systemPackages = with pkgs; [

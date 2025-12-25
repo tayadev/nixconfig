@@ -22,7 +22,6 @@ in
       obs-studio
 
       # Video players
-      vlc
       mpv
 
       # Screen recording

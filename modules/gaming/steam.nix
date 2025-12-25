@@ -28,8 +28,7 @@ in
     environment.systemPackages = with pkgs; [
       # Game launchers
       lutris
-      heroic  # Epic Games and GOG launcher
-
+      
       # Performance monitoring
       mangohud
       goverlay

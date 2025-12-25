@@ -15,10 +15,10 @@ in
       enable = true;
 
       # IMPORTANT: Update these with your information!
-      userName = "Taya Crystals";
-      userEmail = "taya@taya.net";
+      settings = {
+        user.name = "Taya Crystals";
+        user.email = "taya@taya.net";
 
-      extraConfig = {
         init.defaultBranch = "main";
         pull.rebase = false;
         core.editor = "vim";
@@ -37,15 +37,16 @@ in
           lg = "log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit";
         };
       };
+    };
 
-      # Git diff highlighting
-      delta = {
-        enable = true;
-        options = {
-          navigate = true;
-          line-numbers = true;
-          syntax-theme = "Dracula";
-        };
+    # Git diff highlighting
+    programs.delta = {
+      enable = true;
+      enableGitIntegration = true;
+      options = {
+        navigate = true;
+        line-numbers = true;
+        syntax-theme = "Dracula";
       };
     };
   };

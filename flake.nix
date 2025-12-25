@@ -67,7 +67,7 @@
 
                 # Plasma-manager integration
                 home-manager.sharedModules = [
-                  inputs.plasma-manager.homeManagerModules.plasma-manager
+                  inputs.plasma-manager.homeModules.plasma-manager
                 ];
               }
             ];
