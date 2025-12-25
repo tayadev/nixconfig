@@ -23,9 +23,9 @@ in
         ".." = "cd ..";
         "..." = "cd ../..";
 
-        # NixOS specific
-        rebuild = "sudo nixos-rebuild switch --flake ~/.config/nixos#topaz";
-        update = "nix flake update ~/.config/nixos && sudo nixos-rebuild switch --flake ~/.config/nixos#topaz";
+        # NixOS specific (uses current hostname dynamically)
+        rebuild = "sudo nixos-rebuild switch --flake ~/.config/nixos#$(hostname)";
+        update = "nix flake update ~/.config/nixos && sudo nixos-rebuild switch --flake ~/.config/nixos#$(hostname)";
         clean = "sudo nix-collect-garbage --delete-older-than 14d";
 
         # Git shortcuts

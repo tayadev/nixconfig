@@ -14,11 +14,9 @@ in
     programs.git = {
       enable = true;
 
-      # IMPORTANT: Update these with your information!
+      # NOTE: User name and email should be set in your user-specific config
+      # Example: home/taya/development/git.nix
       settings = {
-        user.name = "Taya Crystals";
-        user.email = "taya@taya.net";
-
         init.defaultBranch = "main";
         pull.rebase = false;
         core.editor = "vim";

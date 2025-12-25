@@ -4,6 +4,7 @@
   imports = [
     ./home.nix
     ../modules  # Import shared home modules
+    ./development/git.nix
   ];
 
   # Basic home-manager settings
