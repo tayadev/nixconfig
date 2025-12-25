@@ -33,6 +33,9 @@
   # Environment variables
   home.sessionVariables = {
     EDITOR = "vim";
+
+    # Fix Chromium/Electron stuttering on Wayland + NVIDIA
+    NIXOS_OZONE_WL = "1";  # Force native Wayland mode for Chromium/Electron apps
   };
 
   # XDG user directories
