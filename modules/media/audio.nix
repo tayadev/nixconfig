@@ -12,9 +12,6 @@ in
       # Audio editors
       audacity
 
-      # Music players
-      elisa  # KDE music player
-
       # Audio utilities
       pavucontrol  # PulseAudio/Pipewire volume control
       easyeffects  # Audio effects for Pipewire
