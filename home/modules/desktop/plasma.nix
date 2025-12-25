@@ -36,16 +36,6 @@ in
         command = "ghostty";
       };
 
-      # Configure krunner to launch on Meta key
-      shortcuts = {
-        krunner = {
-          "_launch" = "Meta";
-        };
-      };
-
-      # Disable Meta key opening the application launcher
-      configFile."kwinrc"."ModifierOnlyShortcuts"."Meta" = "org.kde.krunner,/App,,toggleDisplay";
-
       # Configure panels (optional - uncomment to customize)
       # panels = [
       #   {

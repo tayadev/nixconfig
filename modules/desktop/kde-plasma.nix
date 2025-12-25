@@ -23,6 +23,17 @@ in
     # KDE Plasma 6
     services.desktopManager.plasma6.enable = true;
 
+    # Exclude unwanted default KDE applications
+    environment.plasma6.excludePackages = with pkgs.kdePackages; [
+      konsole
+      kate
+    ];
+
+    # Exclude xterm (X11 terminal emulator)
+    services.xserver.excludePackages = with pkgs; [
+      xterm
+    ];
+
     # Enable sound with pipewire
     services.pulseaudio.enable = false;
     security.rtkit.enable = true;

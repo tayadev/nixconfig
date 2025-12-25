@@ -62,5 +62,8 @@ in
         PasswordAuthentication = false;
       };
     };
+
+    # Make hosts file editable
+    environment.etc.hosts.mode = "0644";
   };
 }
