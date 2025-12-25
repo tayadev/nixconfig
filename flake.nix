@@ -64,6 +64,7 @@
                 home-manager.useUserPackages = true;
                 home-manager.extraSpecialArgs = { inherit inputs; };
                 home-manager.users.taya = import ./home/taya;
+                home-manager.backupFileExtension = "backup";
 
                 # Plasma-manager integration
                 home-manager.sharedModules = [

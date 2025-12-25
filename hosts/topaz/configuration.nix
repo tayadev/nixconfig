@@ -1,4 +1,9 @@
-{ config, lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 
 {
   # Enable module features
@@ -34,7 +39,13 @@
   users.users.taya = {
     isNormalUser = true;
     description = "Taya";
-    extraGroups = [ "wheel" "networkmanager" "video" "audio" "plugdev" ];
+    extraGroups = [
+      "wheel"
+      "networkmanager"
+      "video"
+      "audio"
+      "plugdev"
+    ];
     hashedPassword = "$6$5t11bOwky4G5kR1e$an8G.JYT5fO5/HOdFribIPmqCFmQrkw2SNF5IWttIXr67eCF2iC22S6gubFE5TpTG9WQUwo/vjtAS1q9ipujQ1";
   };
 
@@ -45,7 +56,7 @@
     modesetting.enable = true;
     powerManagement.enable = false;
     powerManagement.finegrained = false;
-    open = false;  # Use proprietary driver
+    open = false; # Use proprietary driver
     nvidiaSettings = true;
     package = config.boot.kernelPackages.nvidiaPackages.stable;
   };
@@ -65,5 +76,6 @@
     zip
     tree
     file
+    jq
   ];
 }

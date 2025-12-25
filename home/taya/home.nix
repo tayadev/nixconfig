@@ -6,6 +6,7 @@
     shell.bash.enable = true;
     desktop.plasma.enable = true;
     development.git.enable = true;
+    development.vscode.enable = true;
   };
 
   # User packages
@@ -22,9 +23,6 @@
     # Archives
     p7zip
     unrar
-
-    # Development (user-level)
-    vscode
 
     # Screenshot and screen recording
     flameshot
