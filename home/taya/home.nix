@@ -17,9 +17,6 @@
     # Communication
     discord
 
-    # Productivity
-    anytype
-
     # Utilities
     mpv
 
