@@ -11,8 +11,7 @@
   # User packages
   home.packages = with pkgs; [
     # Web browsers
-    firefox
-    chromium
+    vivaldi
 
     # Communication
     discord
@@ -33,6 +32,8 @@
 
     # Screenshot and screen recording
     flameshot
+
+    claude-code
   ];
 
   # Environment variables
