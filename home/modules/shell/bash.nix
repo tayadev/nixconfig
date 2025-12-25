@@ -39,7 +39,29 @@ in
       bashrcExtra = ''
         # Custom prompt
         PS1='\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+
+        # Enhanced bash completion settings
+        bind 'set completion-ignore-case on'           # Case-insensitive completion
+        bind 'set show-all-if-ambiguous on'            # Show completions immediately on first tab
+        bind 'set colored-stats on'                    # Color completion suggestions by file type
+        bind 'set visible-stats on'                    # Append file type indicators
+        bind 'set mark-symlinked-directories on'       # Mark symlinked directories with /
+        bind 'set colored-completion-prefix on'        # Color the common prefix in completions
+        bind 'set menu-complete-display-prefix on'     # Show prefix before cycling through completions
       '';
+    };
+
+    # zoxide - smarter cd command
+    programs.zoxide = {
+      enable = true;
+      enableBashIntegration = true;
+    };
+
+    # direnv - automatic environment switching
+    programs.direnv = {
+      enable = true;
+      enableBashIntegration = true;
+      nix-direnv.enable = true;
     };
   };
 }

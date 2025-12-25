@@ -61,6 +61,9 @@
     package = config.boot.kernelPackages.nvidiaPackages.stable;
   };
 
+  # Blacklist nouveau/nova to force proprietary NVIDIA driver
+  boot.blacklistedKernelModules = [ "nouveau" "nova" "nova_core" ];
+
   # Intel microcode updates (already configured in hardware-configuration.nix)
   hardware.cpu.intel.updateMicrocode = true;
 
