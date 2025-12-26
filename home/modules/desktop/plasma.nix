@@ -29,6 +29,9 @@ in
       # Set default terminal emulator
       configFile."kdeglobals"."General"."TerminalApplication" = "ghostty";
 
+      # Window behavior - enable hover to focus
+      configFile."kwinrc"."Windows"."FocusPolicy" = "FocusFollowsMouse";
+
       # Hotkeys
       hotkeys.commands."launch-terminal" = {
         name = "Launch Terminal";

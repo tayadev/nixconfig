@@ -64,7 +64,7 @@ in
           80
           120
         ];
-        "editor.minimap.enabled" = true;
+        "editor.minimap.enabled" = false;
         "editor.lineNumbers" = "on";
         "editor.cursorBlinking" = "smooth";
         "editor.smoothScrolling" = true;
