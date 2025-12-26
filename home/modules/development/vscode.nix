@@ -100,6 +100,11 @@ in
 
         # Extension: vscodevim.vim settings
         "extensions.autoUpdate" = false; # Prevent auto-updating declarative extensions
+
+        # Git settings
+        "git.confirmSync" = false;
+        "git.enableSmartCommit" = true;
+        "git.confirmNoVerifyCommit" = false;
         };
 
         keybindings = [
